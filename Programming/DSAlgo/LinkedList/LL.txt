@@ -1,0 +1,3 @@
+* Array is contiguous block of memory in stack
+* Linked is a node in heap (value+nxt pointer)
+* Linked list is self referential (value + )
