@@ -1,0 +1,60 @@
+# Test cases 
+t      numbers        solution
+9      [1,8]          [0,1]
+9      [1,8,10]
+9      [1,2,3,4,5,6,7,9,10,50,60] 
+st = 1 sp = 10 m = 5
+st = 6 sp = 10 m = 8
+st = 6 sp = 7 m = 6
+st = 7 sp = 7 m = 7
+-1, 7
+bs_start = 2, bs_stop = 7
+bs(7,2,7)
+st = 2 sp = 7 m = 4
+st = 5 sp = 7 m = 6
+st = 7 sp = 7 m = 7
+1, 6 
+bs_start = 3, bs_stop = 6
+bs(6,3,6)
+st = 3 sp = 6 m = 4
+st = 5 sp = 6 m = 5
+1, 4
+bs_start = 4, bs_stop = 4
+out of loop
+
+def binary_search(numbers, to_find, bs_start, bs_stop):
+	
+	while (start<=stop)
+		mid = bs_start + (bs_stop-bs_start)//2
+		if ( numbers[mid] == to_find):
+			return 1, mid-1  # or mid -1 
+		elif to_find >numbers[mid]:
+			start = mid + 1
+		else:
+			stop = mid - 1 
+
+    return -1, mid
+
+solution = []
+first_index = 0
+to_find = target-numbers[first_index]
+bs_start = first_index+1
+bs_stop = len(numbers)-1
+
+	
+while(bs_start<bs_stop):
+	
+	found, upper_bound = binary_search(numbers, to_find, bs_start, bs_stop)
+	if found: 
+		solution.append([i,upper_bound])
+
+	first_index += 1
+	to_find = target-numbers[first_index]
+	bs_start = first_index + 1
+	bs_stop = upper_bound 
+
+return solution
+	
+
+
+
