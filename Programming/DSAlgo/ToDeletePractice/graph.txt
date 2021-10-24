@@ -1,0 +1,41 @@
+def generate_BST_from_preorder(preorder):
+		''' preorder is a queue '''
+		pending = []
+		value = preorder.popleft()
+		root = TreeNode(value)
+		
+		
+		
+def BFS(adjacency_matrix):
+	n = len(adjacency_matrix)
+	visited = [] # can be an array. So its index directly gives the vertex
+	pending = deque()
+	pending.append(0)
+	while pending: 
+		row = pending.popleft()
+		for col in range(n):
+			if A[row][col] == 1:
+				if col not in visited: # if A[row][col] == 1 and col not in visited: (concise)
+					visited.append(col) # we want unique values: if not in visited append
+					pending.append(col)
+
+
+visited = [000000000000] # static variable/ class attribute
+def DFS(row):
+		if visited[row] == 0:
+		visited[row] = 1 
+		print(row)
+		for col in range(n):
+			if (A[row][col] == 1) and (visited[col] == 0):
+				DFS(col)
+
+                    7 completed 
+6 completed 
+5 col = 6              col = 7
+4 col = 5
+3 col = 4 
+2 col = 3
+1 col = 2
+visited = [x1111111]
+
+1 2 3 4 5 

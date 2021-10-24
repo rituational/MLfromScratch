@@ -1,0 +1,98 @@
+def search_BST(node, target):
+	if node:
+		if target == node.value:
+			return node 
+		elif target < node.value:
+			return search_BST(node.left, target)
+		else: 
+			return search_BST(node.right, target)
+	else: 
+		return None
+
+
+def search_BST_iter(node, target):
+	out = None
+	while node: 
+		if node.value == target: 
+			out = node
+			break
+		elif target < node.value:
+			node = node.left 
+		else: 
+			node = node.right
+	return out 
+	
+	
+def insert_in_BST(root, target): 
+	if root:
+		node = root
+		while node: 
+			if node.value == target: 
+				print("Already there")
+				break
+			elif target < node.value:
+				if node.left:
+					node = node.left
+				else: 
+					node.left = TreeNode(target) 
+			else: 
+				if node.right: 
+					node = node.right
+				else: 
+					node.right = TreeNode(target)
+	else: 
+		root = TreeNode(target)
+		
+	return root 
+
+def insert_in_BST(root, target): 
+	if root:
+		node = root
+		while node: 
+			if node.value == target: 
+				print("Already there")
+				break
+			elif target < node.value:
+				if node.left:
+					node = node.left
+				else: 
+					node.left = TreeNode(target) 
+			else: 
+				if node.right: 
+					node = node.right
+				else: 
+					node.right = TreeNode(target)
+	else: 
+		root = TreeNode(target)
+		
+	return root 
+	
+## My implementation
+def recur_insert_in_BST(node, prev, key):
+	if node: 
+		if node.value == target: 
+			return node 
+		elif target < node.value:
+			recur_insert_in_BST(node.left, node, key)
+		else: 
+			recur_insert_in_BST(node.right, node, key)
+	else:
+		if target <prev.value:
+			prev.left = TreeNode(target)
+		else:
+			prev.right = TreeNode(target)
+
+######## Bari's amazing use of recursion #########
+# https://wabtec.udemy.com/course/datastructurescncpp/learn/lecture/13190002#notes
+
+def recur_insert_in_BST(node, prev, key):
+	if not node: 
+		temp = TreeNode(key) 
+		return temp 
+	else:
+		if key < node.value:
+			node.left = recur_insert_in_BST(node.left)
+		if key > node.value: 
+			node.right = recur_insert_in_BST(node.right)
+	return node		
+	

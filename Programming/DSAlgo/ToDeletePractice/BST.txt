@@ -1,0 +1,94 @@
+* All unique elements
+* Inorder is ascending order 
+
+def search_BST(root, key):
+	temp = root 
+	
+	while temp:
+		if key == temp.value: 
+			return temp 
+		elif key<temp.value: 
+			temp = temp.left
+		else: 
+			temp = temp.right
+	
+	return -1			
+
+def insert_in_BST(root, key):
+	temp = root
+	if temp: 
+		while temp:
+			p = temp
+			if key == temp.value: 
+				print("Exists")
+				return root 
+			elif key<temp.value: 
+				temp = temp.left
+			else: 
+				temp = temp.right
+		if key<p.value: 
+			p.left = TreeNode(key)
+		else: 
+			p.right = TreNode(key)
+	else: 
+		root = TreeNode(key)
+	return root 
+	
+def recur_insert_BST(node, key):
+	if node == None: 
+			t = TreeNode(key)
+			return t 
+	else: 
+		if node.value == key: 
+			print("Exists")
+			return 
+		elif key < node.value:
+			node.left = recur_insert_BST(node.left, key)
+		else: 
+			node.right = recur_insert_BST_node.right, key)
+		return node	
+
+def create_BST(keys):			
+	root = None	
+	while keys: 
+		key = keys.popeft()
+		if root == None:
+			root = recur_insert_BST(None, key)
+		else: 
+			recur_insert_BST(root, key)
+			
+		
+#### For deletion #####
+		
+def go_right(node):
+	if node.right == None: 
+		return node
+	else: 
+		return go_right(node.right)
+
+def go_left(node):
+	if not node.left:
+		return node 
+	else: 
+		return go_left(node.left)
+
+
+def find_replacement_delete(node):
+	if node.left: 
+		replacement = go_right(node.left)
+		node.value = replacement.value 
+		node.left = find_replacement_delete(replacement)
+		return node
+	elif node.right: 
+		replacement = go_left(node.right)
+	else: 
+		return None
+	
+
+def delete_node_BST(root, key):
+	n2d = search_BST(root, key)
+	if n2d:
+		replacement = find_replacement_delete(n2d)
+		while find_replacement_delete(replacement) != replacement:
+			
+
